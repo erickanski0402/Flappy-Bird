@@ -6,11 +6,11 @@ class pipe{
     this.thickness = thickness
 
     this.safeZonePoint = 200//this.randomizeSafeZone()
-    this.safeZoneThickness = 75
+    this.safeZoneThickness = 100
   }
 
   movePipe(){
-    this.posX -= 1
+    this.posX -= 3
 
     if(this.posX <= 0 - this.thickness){
       this.posX = reset_point
@@ -19,8 +19,33 @@ class pipe{
     }
   }
 
-  checkForCollision(playerX, playerY){
+  drawPipe(){
+    fill(200,0,0)
+    rect(this.posX, 0, this.thickness, 399)
+    fill(0,150,200)
+    rect(this.posX, this.safeZonePoint, this.thickness, this.safeZoneThickness)
+  }
 
+  checkForCollision(player){
+    let playerXRightEdge = player.posX + player.radius
+    let playerXLeftEdge = player.posX - player.radius
+    let playerYTopEdge = player.posY// - player.radius
+    let playerYBottomEdge = player.posY// + player.radius
+
+    // console.log(playerXEdge + "   " + this.posX)
+    if(playerXRightEdge >= this.posX && playerXRightEdge <= this.posX + this.thickness ||
+      playerXLeftEdge >= this.posX && playerXLeftEdge <= this.posX + this.thickness){
+
+      if(playerYTopEdge > this.safeZonePoint && playerYBottomEdge < this.safeZonePoint + this.safeZoneThickness){
+          console.log('safe')
+          return false
+      }
+
+      console.log("colliding")
+      return true
+    }
+
+    return false
   }
 
   randomizeSafeZone(){
