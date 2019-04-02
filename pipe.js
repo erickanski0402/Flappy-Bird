@@ -27,8 +27,8 @@ class pipe{
   }
 
   checkForCollision(player){
-    let playerXRightEdge = player.posX + player.radius
-    let playerXLeftEdge = player.posX - player.radius
+    let playerXRightEdge = player.posX// + player.radius
+    let playerXLeftEdge = player.posX// - player.radius
     let playerYTopEdge = player.posY// - player.radius
     let playerYBottomEdge = player.posY// + player.radius
 

@@ -24,11 +24,11 @@ function draw(){
   background(0,150,200)
   noStroke()
 
-  // if(keyState[32] && player.velY <= 1){
-  //   player.velY = 5
-  // }else{
-  //   player.velY -= 0.25
-  // }
+  if(keyState[32] && player.velY <= 1){
+    player.velY = 5
+  }else{
+    player.velY -= 0.25
+  }
 
   for(let i = 0; i < 3; i++){
     pipes[i].movePipe()
