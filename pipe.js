@@ -5,7 +5,7 @@ class pipe{
 
     this.thickness = thickness
 
-    this.safeZonePoint = 200//this.randomizeSafeZone()
+    this.safeZonePoint = this.randomizeSafeZone()
     this.safeZoneThickness = 100
   }
 
@@ -15,7 +15,7 @@ class pipe{
     if(this.posX <= 0 - this.thickness){
       this.posX = reset_point
 
-      // this.safeZonePoint = this.randomizeSafeZone()
+      this.safeZonePoint = this.randomizeSafeZone()
     }
   }
 
@@ -49,6 +49,8 @@ class pipe{
   }
 
   randomizeSafeZone(){
-    return Math.floor(Math.random() * (10 - 340 + 1)) + 100;
+    let val = Math.floor(Math.random() * (290 - 10 + 1)) + 10;
+    console.log(val)
+    return val
   }
 }

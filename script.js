@@ -24,7 +24,7 @@ function draw(){
   background(0,150,200)
   noStroke()
 
-  if(keyState[32] && player.velY <= 1){
+  if(keyState[32] && player.velY <= 3){
     player.velY = 5
   }else{
     player.velY -= 0.25
@@ -35,7 +35,7 @@ function draw(){
     pipes[i].drawPipe()
 
     if(pipes[i].checkForCollision(player)){
-      player.posY = 200
+      player.posY = 250
     }
   }
 
