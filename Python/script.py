@@ -20,13 +20,15 @@ def main():
         window.clear()
         draw_floor()
         player.move()
+        # player.draw()
         reset_game = False
         for pipe in pipes:
             pipe.move()
 
             if(pipe.position < -pipe.width):
-                pipes.remove(pipe)
-                pipes.append(Pipe(900, PLAYER_HEIGHT))
+                pipe.reset()
+                # pipes.remove(pipe)
+                # pipes.append(Pipe(900, PLAYER_HEIGHT))
 
             if player.colliding(pipe):
                 reset_game = True
@@ -55,7 +57,7 @@ def main():
             player.vel_y = 12
         pass
 
-    pyglet.clock.schedule_interval(update, 0.01)
+    pyglet.clock.schedule_interval(update, 0.02)
     pyglet.app.run()
 
 if __name__ == '__main__':

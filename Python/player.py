@@ -70,10 +70,11 @@ class Player:
         and player.pos_x < pipe.position + pipe.width):
             if (player.pos_y > pipe.safe_point_top - radius
             or player.pos_y < pipe.safe_point_bottom + radius):
-                print('!!!!!!!!!!Not Safe!!!!!!!!!!!!')
+                # print('!!!!!!!!!!Not Safe!!!!!!!!!!!!')
                 return True
             else:
-                print('Safe')
+                # print('Safe')
+                pass
         else:
             pass
         return False;
