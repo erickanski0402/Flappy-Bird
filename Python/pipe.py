@@ -35,6 +35,7 @@ class Pipe:
                             pos + width, WINDOW_CEILING,
                             pos, WINDOW_CEILING)))
 
+        pyglet.gl.glColor3f(0,0.7,0)
         pyglet.graphics.draw(RECT_CORNERS, pyglet.gl.GL_QUADS, quad_bottom)
         pyglet.graphics.draw(RECT_CORNERS, pyglet.gl.GL_QUADS, quad_top)
         pass

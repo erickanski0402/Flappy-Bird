@@ -27,6 +27,7 @@ class Player:
 
         dx, dy = self.radius, 0
 
+        glColor3f(0.8, 0.8, 0)
         glBegin(GL_TRIANGLE_FAN)
         glVertex2f(self.pos_x, self.pos_y)
         for i in range(iterations + 1):
@@ -66,8 +67,9 @@ class Player:
             return True
 
         radius = player.radius
-        if (player.pos_x > pipe.position
-        and player.pos_x < pipe.position + pipe.width):
+        if (player.pos_x + radius > pipe.position
+        and player.pos_x - radius < pipe.position + pipe.width):
+            # print('Checking...')
             if (player.pos_y > pipe.safe_point_top - radius
             or player.pos_y < pipe.safe_point_bottom + radius):
                 # print('!!!!!!!!!!Not Safe!!!!!!!!!!!!')
