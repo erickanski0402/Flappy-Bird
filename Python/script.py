@@ -30,7 +30,7 @@ def main():
                 pipe.reset()
 
             if player.colliding(pipe):
-                # reset_game = True
+                reset_game = True
                 pass
 
         if reset_game:
